@@ -1,0 +1,9 @@
+*.exe
+*.obj
+*.o
+/*/
+*.glsl
+*.lib
+*.a
+.msvc_config
+main.cpp
