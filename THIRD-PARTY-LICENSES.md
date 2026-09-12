@@ -9,7 +9,7 @@ licenses is provided below.
 | :--- | :--- | :--- | :--- |
 |**GLEW** | v2.3.1 | BSD-3-Clause AND MIT
 |**GLFW** | v3.4 | Zlib
-|**stb_image** | v2.3 | MIT | Dual-licensed; using under MIT
+|**stb_image** | v2.30 | MIT | Dual-licensed; using under MIT
 
 ## GLEW
 The OpenGL Extension Wrangler Library
