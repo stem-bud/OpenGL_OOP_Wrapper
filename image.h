@@ -1,4 +1,6 @@
 #include "texture.h"
+#ifndef IMAGE_HEADER
+#define IMAGE_HEADER
 class image
 {
     public:
@@ -21,3 +23,5 @@ class image
         void bind(bind_state bind_state,int bind_unit);
         void unbind();
 };
+
+#endif

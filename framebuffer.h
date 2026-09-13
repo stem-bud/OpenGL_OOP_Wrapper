@@ -1,6 +1,8 @@
 #include "texture.h"
 #include <vector>
 
+#ifndef FRAMEBUFFER_HEADER
+#define FRAMEBUFFER_HEADER
 /**
  * @brief opengl framebuffer wrapper
  */
@@ -181,3 +183,4 @@ class framebuffer
         ~framebuffer();
 };
 
+#endif

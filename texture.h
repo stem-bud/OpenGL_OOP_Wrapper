@@ -2,8 +2,8 @@
 #include "glfw_glew_include.h"
 #include <string>
 #include <iostream>
-#ifndef TEXTURE_H
-#define TEXTURE_H
+#ifndef TEXTURE_HEADER
+#define TEXTURE_HEADER
 using byte = std::byte;
 
 class texture
