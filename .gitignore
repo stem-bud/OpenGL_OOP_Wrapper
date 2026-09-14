@@ -2,6 +2,7 @@
 *.obj
 *.o
 /*/
+!/src/
 *.glsl
 *.lib
 *.a
