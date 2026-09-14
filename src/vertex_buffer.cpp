@@ -1,4 +1,4 @@
-#include "vertex_buffer.h"
+#include "./vertex_buffer.h"
 
 vertex_buffer::vertex_buffer(void *data, int length,number_type type)
 {

@@ -1,4 +1,4 @@
-#include "multiform.h"
+#include "./multiform.h"
 #include <cstring>
 
 multiform::multiform(const char *name, Shader **shaders,int number_of_shaders)

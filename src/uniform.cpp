@@ -1,7 +1,7 @@
-#include "glfw_glew_include.h"
-#include "string"
-#include "uniform.h"
-#include "shader.h"
+#include "./glfw_glew_include.h"
+#include <string>
+#include "./uniform.h"
+#include "./shader.h"
 #include <iostream>
 
 

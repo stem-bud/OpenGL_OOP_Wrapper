@@ -1,5 +1,5 @@
-#include "framebuffer.h"
-#include "glfw_glew_include.h"
+#include "./framebuffer.h"
+#include "./glfw_glew_include.h"
 #include <iostream>
 
 

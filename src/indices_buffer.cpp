@@ -1,5 +1,5 @@
-#include "glfw_glew_include.h"
-#include "indices_buffer.h"
+#include "./glfw_glew_include.h"
+#include "./indices_buffer.h"
 
 indices_buffer::indices_buffer(unsigned int *indices, int length)
 {

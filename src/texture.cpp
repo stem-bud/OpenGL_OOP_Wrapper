@@ -1,7 +1,7 @@
-#include "texture.h"
+#include "./texture.h"
 #include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "./stb_image.h"
 
 
 GLenum texture::get_gl_format()

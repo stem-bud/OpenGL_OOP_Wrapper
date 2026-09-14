@@ -1,11 +1,11 @@
-#include "glfw_glew_include.h"
-#include "constants.h"
-#include "string"
-#include "vector"
-#include "matrix.h"
+#include "./glfw_glew_include.h"
+#include "./constants.h"
+#include <string>
+#include <vector>
+#include "./matrix.h"
 #include <iostream>
 #include <cmath>
-#include "shader.h"
+#include "./shader.h"
 
 int matrix::get_size(Matrix_Types mat_type)
 {

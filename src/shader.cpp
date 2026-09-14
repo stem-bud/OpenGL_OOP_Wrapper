@@ -1,6 +1,6 @@
-#include "iostream"
-#include "shader.h"
-#include "fstream"
+#include <iostream>
+#include "./shader.h"
+#include <fstream>
 #include <vector>
 
 Shader::Shader(std::string path)
@@ -12,7 +12,7 @@ Shader::Shader(std::string path)
         "._0123456789"
     );
 
-    std::cout << path.substr(pos + 1) << std::endl;
+    //std::cout << path.substr(pos + 1) << std::endl;
     //std::smatch matches;
     //std::regex_search(path,matches,std::regex("[a-zA-Z\\._0-9]+$"));
 
