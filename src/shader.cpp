@@ -103,7 +103,7 @@ Shader::Shader(std::string path)
     glAttachShader(program,fragShader);
     glLinkProgram(program);
 
-    GLint isLinked;
+    /*GLint isLinked;
     glGetProgramiv(program, GL_LINK_STATUS, &isLinked);
     if (!isLinked)
     {
@@ -112,9 +112,8 @@ Shader::Shader(std::string path)
         std::vector<GLchar> errorLog(logLength);
         glGetProgramInfoLog(program, logLength, &logLength, &errorLog[0]);
         //std::cout << "PROGRAM LINKING ERROR:\n" << errorLog.data() << std::endl;
-    }
+    }*/
 
-    glValidateProgram(program);
     glDeleteShader(vertShader);
     glDeleteShader(fragShader);
     glDeleteShader(geomShader);
