@@ -168,7 +168,7 @@ void texture::bind(GLint location)
     glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS,&max);
     if(location >= max)
     {
-        std::cerr << "invalid location"<< std::endl;
+        //std::cerr << "invalid location"<< std::endl;
         return;
     }
     
@@ -267,7 +267,7 @@ void texture::clear()
 {
     if(clear_colors.at(internal_number_type) == nullptr)
     {
-        std::cerr << "default clear color not set" << std::endl;
+        //std::cerr << "default clear color not set" << std::endl;
         
     }
     clear(internal_clear_color==nullptr?clear_colors.at(internal_number_type):internal_clear_color);
@@ -306,7 +306,7 @@ texture::number_type texture::get_number_type(texture::internal_format inner_for
                 return number_type::UNSIGNED_INT;
             case internal_format::UNASSIGNED:
             default:
-                std::cerr << "unknown internal format" << std::endl;
+                //std::cerr << "unknown internal format" << std::endl;
                 return number_type::UNASSIGNED;
         }
 }

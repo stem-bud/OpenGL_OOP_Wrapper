@@ -1,6 +1,6 @@
-#include "glfw_glew_include.h"
-#include "vertex_buffer.h"
-#include "indices_buffer.h"
+#include "./glfw_glew_include.h"
+#include "./vertex_buffer.h"
+#include "./indices_buffer.h"
 
 #ifndef VAO_HEADER
 #define VAO_HEADER
@@ -73,6 +73,6 @@ class vao
         ~vao();
 };
 
-#include "vao.tpp"
+#include "./vao.tpp"
 
 #endif

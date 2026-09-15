@@ -1,4 +1,4 @@
-#include "shader.h"
+#include "./shader.h"
 
 #ifndef MATRIX_HEADER
 #define MATRIX_HEADER

@@ -34,7 +34,7 @@ void framebuffer::add_attachment(const texture& attachment, int location)
         case texture::attachment_type::COLOR:
             if(location >= max_attachment)
             {
-                std::cerr << "unable to attach texture to framebuffer" << std::endl;
+                //std::cerr << "unable to attach texture to framebuffer" << std::endl;
                 
             }
             glFramebufferTexture2D(GL_FRAMEBUFFER,GL_COLOR_ATTACHMENT0+location,GL_TEXTURE_2D,attachment.get_id(),0);
@@ -46,7 +46,7 @@ void framebuffer::add_attachment(const texture& attachment, int location)
             glFramebufferTexture2D(GL_FRAMEBUFFER,GL_STENCIL_ATTACHMENT,GL_TEXTURE_2D,attachment.get_id(),0);
         break;
         default:
-            std::cerr << "attachment type not supported" << std::endl;
+            //std::cerr << "attachment type not supported" << std::endl;
             
     }
     attachment.get_size(&sizex,&sizey);
@@ -58,7 +58,7 @@ void framebuffer::add_attachment(const texture& attachment)
 {
     if(attachment.get_type() == texture::attachment_type::COLOR)
     {
-        std::cerr << "location not given for color attachment" << std::endl;
+        //std::cerr << "location not given for color attachment" << std::endl;
         
     }
     add_attachment(attachment,0);
@@ -112,12 +112,12 @@ void framebuffer::copy_framebuffer(const framebuffer& source, const framebuffer&
 {
     if(source.sizex == -1)
     {
-        std::cerr << "source framebuffer does not have an attachment" << std::endl;
+        //std::cerr << "source framebuffer does not have an attachment" << std::endl;
         
     }
     if(destination.sizex == -1)
     {
-        std::cerr << "destination framebuffer does not have an attachment" << std::endl;
+        //std::cerr << "destination framebuffer does not have an attachment" << std::endl;
         
     }
     //std::cout << destination.sizex << ", " << destination.sizey << std::endl;

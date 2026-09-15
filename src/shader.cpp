@@ -74,14 +74,13 @@ Shader::Shader(std::string path)
         {
             *tobeStrung+=line+"\n";
         }
-    }
-    
+    }   
 
-    unsigned int vertShader = compile_shader(vertexShader,GL_VERTEX_SHADER);
-    unsigned int fragShader = compile_shader(fragmentShader,GL_FRAGMENT_SHADER);
-    unsigned int geomShader = compile_shader(geometryShader,GL_GEOMETRY_SHADER);
-    unsigned int tessconShader = compile_shader(tesselControl,GL_TESS_CONTROL_SHADER);
-    unsigned int tessEvShader = compile_shader(tesselEval,GL_TESS_EVALUATION_SHADER);
+    GLuint vertShader = compile_shader(vertexShader,GL_VERTEX_SHADER);
+    GLuint fragShader = compile_shader(fragmentShader,GL_FRAGMENT_SHADER);
+    GLuint geomShader = compile_shader(geometryShader,GL_GEOMETRY_SHADER);
+    GLuint tessconShader = compile_shader(tesselControl,GL_TESS_CONTROL_SHADER);
+    GLuint tessEvShader = compile_shader(tesselEval,GL_TESS_EVALUATION_SHADER);
     
     program = glCreateProgram();
     glAttachShader(program,vertShader);
@@ -112,10 +111,15 @@ Shader::Shader(std::string path)
         glGetProgramiv(program,GL_INFO_LOG_LENGTH, &logLength);
         std::vector<GLchar> errorLog(logLength);
         glGetProgramInfoLog(program, logLength, &logLength, &errorLog[0]);
-        std::cout << "PROGRAM LINKING ERROR:\n" << errorLog.data() << std::endl;
+        //std::cout << "PROGRAM LINKING ERROR:\n" << errorLog.data() << std::endl;
     }
 
     glValidateProgram(program);
+    glDeleteShader(vertShader);
+    glDeleteShader(fragShader);
+    glDeleteShader(geomShader);
+    glDeleteShader(tessconShader);
+    glDeleteShader(tessEvShader);
     bind();
 }
 
@@ -123,7 +127,8 @@ GLuint Shader::compile_shader(std::string shader,GLuint type)
 {
     if(shader.length() == 0)
     {
-        std::cout << "no shader found " <<  std::endl;
+        //no shader found
+        //std::cerr << "no shader found " <<  std::endl;
         return 0;
     }
     const char * shaderSource = shader.c_str();
@@ -139,13 +144,13 @@ GLuint Shader::compile_shader(std::string shader,GLuint type)
         glGetShaderiv(id,GL_INFO_LOG_LENGTH,&length);
         char* message = (char*)alloca(length*sizeof(char));
         glGetShaderInfoLog(id,length,&length,message);
-        std::cout << (type == GL_VERTEX_SHADER? "vertex shader":type==GL_FRAGMENT_SHADER?"fragmanet shader":type==GL_GEOMETRY_SHADER?"geometry shader":type == GL_TESS_CONTROL_SHADER?"tessellation control shader":"tessellation evaluation shader") << " error" << std::endl;
-        std::cerr << message << std::endl;
+        //std::cout << (type == GL_VERTEX_SHADER? "vertex shader":type==GL_FRAGMENT_SHADER?"fragmanet shader":type==GL_GEOMETRY_SHADER?"geometry shader":type == GL_TESS_CONTROL_SHADER?"tessellation control shader":"tessellation evaluation shader") << " error" << std::endl;
+        //std::cerr << message << std::endl;
         
     }
     if(id == 0)
     {
-        std::cerr << "shader error" << std::endl;
+        //std::cerr << "shader error" << std::endl;
     }
     return id;
 }
@@ -166,8 +171,8 @@ void Shader::sample(texture& tex,const char *name,int location)
 {
     if(!tex.is_samplable())
     {
-        std::cerr << "texture not samplable" << std::endl;
-        
+        //std::cerr << "texture not samplable" << std::endl; 
+        return;
     }
     bind();
     tex.bind(location);
@@ -188,4 +193,13 @@ void Shader::unbind()
 Shader* Shader::current_program()
 {
     return active_program;
+}
+
+Shader::~Shader()
+{
+    if(active_program == this)
+    {
+        active_program = nullptr;
+    }
+    glDeleteProgram(program);
 }

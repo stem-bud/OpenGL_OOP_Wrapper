@@ -1,5 +1,5 @@
 #include <cstddef>
-#include "glfw_glew_include.h"
+#include "./glfw_glew_include.h"
 #include <unordered_map>
 
 #ifndef VERTEX_BUFFER_HEADER

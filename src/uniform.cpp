@@ -5,13 +5,12 @@
 #include <iostream>
 
 
-
 uniform::uniform(const char* name,const Shader& program)
 {
     uniformid  = glGetUniformLocation(program.get_shader_program(),name);
     if(uniformid == -1)
     {
-        std::cerr << "unable to locate uniform" << std::endl;
+        //std::cerr << "unable to locate uniform" << std::endl;
     }
 }
 

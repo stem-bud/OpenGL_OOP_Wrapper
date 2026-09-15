@@ -1,5 +1,5 @@
-#include "uniform.h"
-#include "shader.h"
+#include "./uniform.h"
+#include "./shader.h"
 
 #ifndef MULTIFORM_HEADER
 #define MULTIFORM_HEADER
@@ -41,6 +41,6 @@ class multiform
 };
 
 
-#include "multiform.tpp"
+#include "./multiform.tpp"
 
 #endif

@@ -1,4 +1,4 @@
-#include "texture.h"
+#include "./texture.h"
 #ifndef IMAGE_HEADER
 #define IMAGE_HEADER
 class image

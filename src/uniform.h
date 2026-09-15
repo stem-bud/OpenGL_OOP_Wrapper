@@ -1,5 +1,5 @@
-#include "shader.h"
-#include "matrix.h"
+#include "./shader.h"
+#include "./matrix.h"
 
 
 #ifndef UNIFORM_HEADER

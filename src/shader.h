@@ -1,5 +1,5 @@
-#include "glfw_glew_include.h"
-#include "texture.h"
+#include "./glfw_glew_include.h"
+#include "./texture.h"
 
 #ifndef SHADER_H_DEF
 #define SHADER_H_DEF
@@ -7,8 +7,7 @@ class Shader
 {
     private:
         GLuint program;
-        
-        GLuint compile_shader(std::string shader,GLuint type);
+        static GLuint compile_shader(std::string shader,GLuint type);
         static inline Shader* active_program;
     public:
         Shader(const Shader&) = delete;

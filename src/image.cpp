@@ -33,8 +33,7 @@ void image::bind(image::bind_state bind_state, int bind_unit)
             binding_as = GL_READ_WRITE;
         break;
         default:
-            std::cerr << "invalid binding state for image" << std::endl;
-            
+            //std::cerr << "invalid binding state for image" << std::endl; 
         break;
     }
     glBindImageTexture(bind_unit,id,0,GL_FALSE,0,binding_as,texture::get_gl_inner_format(inner_format));

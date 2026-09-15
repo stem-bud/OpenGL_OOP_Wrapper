@@ -1,4 +1,4 @@
-#include "texture.h"
+#include "./texture.h"
 #include <vector>
 
 #ifndef FRAMEBUFFER_HEADER
