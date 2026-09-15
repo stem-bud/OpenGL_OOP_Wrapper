@@ -3,8 +3,10 @@
 *.o
 /*/
 !/src/
+/src/*/
 *.glsl
 *.lib
 *.a
 .msvc_config
 main.cpp
+*.zip
