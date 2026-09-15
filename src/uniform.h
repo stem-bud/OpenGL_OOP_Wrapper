@@ -9,6 +9,7 @@ class uniform
     private: 
         GLint  uniformid;
         matrix::Matrix_Types matrix_type;
+        bool is_valid;
     public:
         uniform() = delete;
         uniform(const uniform&) = delete;
@@ -26,6 +27,7 @@ class uniform
             set_matrix_type(type);
         }
         uniform(std::string name,const Shader& program,matrix::Matrix_Types type):uniform::uniform(name.c_str(),program,type){}
+        bool is_valid_uniform() const;
         void set_matrix_type(matrix::Matrix_Types type);
         void data(bool x);
         void data(bool x,bool y);

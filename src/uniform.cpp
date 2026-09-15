@@ -8,10 +8,17 @@
 uniform::uniform(const char* name,const Shader& program)
 {
     uniformid  = glGetUniformLocation(program.get_shader_program(),name);
+    is_valid = true;
     if(uniformid == -1)
     {
+        is_valid = false;
         //std::cerr << "unable to locate uniform" << std::endl;
     }
+}
+
+bool uniform::is_valid_uniform() const
+{
+    return is_valid;
 }
 
 void uniform::set_matrix_type(matrix::Matrix_Types type)
