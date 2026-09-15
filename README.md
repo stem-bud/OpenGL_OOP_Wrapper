@@ -1,2 +1,2 @@
 # OpenGL OOP Wrapper
-an object oritented wrapper for OpenGL written in c++
+an object oriented wrapper for OpenGL written in c++

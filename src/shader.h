@@ -23,5 +23,6 @@ class Shader
         void sample(texture& tex,std::string name,int location);
         static void unbind();
         static Shader* current_program();
+        ~Shader();
 };
 #endif
