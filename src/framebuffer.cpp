@@ -1,6 +1,6 @@
 #include "./framebuffer.h"
 #include "./glfw_glew_include.h"
-#include <iostream>
+
 
 
 framebuffer::framebuffer()
@@ -46,8 +46,8 @@ void framebuffer::add_attachment(const texture& attachment, int location)
             glFramebufferTexture2D(GL_FRAMEBUFFER,GL_STENCIL_ATTACHMENT,GL_TEXTURE_2D,attachment.get_id(),0);
         break;
         default:
+        break;
             //std::cerr << "attachment type not supported" << std::endl;
-            
     }
     attachment.get_size(&sizex,&sizey);
     //textures.push_back(attachment);

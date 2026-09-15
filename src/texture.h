@@ -1,7 +1,7 @@
 #include <unordered_map>
 #include "./glfw_glew_include.h"
 #include <string>
-#include <iostream>
+
 #ifndef TEXTURE_HEADER
 #define TEXTURE_HEADER
 using byte = std::byte;
@@ -139,7 +139,7 @@ class texture
         void upload(void* data,int offset, int length);
         void get_pixel_data(void* data_store);
         template<typename T>
-        void print_pixels();
+        std::string pixel_string();
         ~texture();
     private:
         void set_internal_format(internal_format format);
@@ -153,7 +153,7 @@ class texture
 
 
 template <typename T>
-inline void texture::print_pixels()
+std::string texture::pixel_string()
 {
     int length = size_x*(size_y>0?size_y:1);
     int height = (size_y>0?size_y:1);
@@ -175,8 +175,8 @@ inline void texture::print_pixels()
         string+=i!=length-1?"\n":"";
     }
     delete[] data;
-    std::cout << string << std::endl;
-
+    //std::cout << string << std::endl;
+    return string;
 }
 
 

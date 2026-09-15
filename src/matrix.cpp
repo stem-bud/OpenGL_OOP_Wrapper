@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "./matrix.h"
-#include <iostream>
+
 #include <cmath>
 #include "./shader.h"
 

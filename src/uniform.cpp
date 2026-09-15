@@ -2,7 +2,7 @@
 #include <string>
 #include "./uniform.h"
 #include "./shader.h"
-#include <iostream>
+
 
 
 uniform::uniform(const char* name,const Shader& program)

@@ -1,5 +1,6 @@
 #ifndef INDICES_BUFFER_HEADER
 #define INDICES_BUFFER_HEADER
+#include "./glfw_glew_include.h"
 class indices_buffer
 {
     private:

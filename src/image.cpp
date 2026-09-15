@@ -1,5 +1,5 @@
 #include "./image.h"
-#include <iostream>
+
 
 image::image(const texture& texture)
 {
