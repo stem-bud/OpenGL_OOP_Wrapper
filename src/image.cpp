@@ -42,5 +42,4 @@ void image::bind(image::bind_state bind_state, int bind_unit)
 void image::unbind()
 {
     glBindImageTexture(bind_unit,0,0,GL_FALSE,0,GL_READ_ONLY,GL_RGBA8);
-    
 }
